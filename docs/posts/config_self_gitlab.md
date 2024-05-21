@@ -24,6 +24,12 @@ git config --global user.email "你的邮箱地址"
 
 这将用于提交代码时的作者信息。
 
+配置一下pull时的默认策略为变基
+
+```bash
+git config --global pull.rebase true
+```
+
 ### 登录凭据保存
 
 以下三种方式选择一种即可。
