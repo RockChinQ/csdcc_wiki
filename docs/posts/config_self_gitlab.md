@@ -41,6 +41,8 @@ git clone https://gitlab.eduxiji.net/csc1/nscscc/compiler2024.git
 #=>
 git clone https://<username>:<access_token>@gitlab.eduxiji.net/csc1/nscscc/compiler2024.git
 ```
+- 这种方法一次只能设置一个仓库
+- 已经克隆到本地的仓库可以修改仓库中的`.git/config`
 
 #### $HOME/.netrc
 
