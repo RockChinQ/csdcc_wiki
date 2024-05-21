@@ -24,8 +24,36 @@ git config --global user.email "你的邮箱地址"
 
 这将用于提交代码时的作者信息。
 
+
+### 登录凭据保存
+有四种方法，其中三种方法有效，均使用 username + access_token.
+#### git credential.helper
 启用长期保存凭据，之后推代码时只需要输入一次 Access Token 即可自动记住。
 
 ```bash
 git config --global credential.helper store
 ```
+
+#### 在URL中置入登录账号密码
+此种方法需要修改克隆时的URL，在地址前面加入形如“用户名:密码@"格式的登录信息。
+```
+git clone https://gitlab.eduxiji.net/csc1/nscscc/compiler2024.git
+#=>
+git clone https://<username>:<access_token>@gitlab.eduxiji.net/csc1/nscscc/compiler2024.git
+```
+
+#### $HOME/.netrc
+
+通过 `$HOME/.netrc` 配置文件自动登录，适用于同时配置多个仓库的情况。
+```bash
+nano ~/.netrc
+```
+```
+# educg selfhosted gitlab
+machine gitlab.eduxigi.net
+login <USER_NAME_HERE>
+password <ACCESS_TOKEN_HERE>
+```
+
+#### gitlab workflow vscode plugin
+因为主办方的gitlab-ce版本过低·，无法使用
